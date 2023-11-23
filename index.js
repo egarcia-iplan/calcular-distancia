@@ -1,3 +1,4 @@
+let count = 0;
 function initMap() {
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -28,6 +29,8 @@ function initMap() {
 }
 
 async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+  count= count + 1;
+  console.log(count)
   const start = document.getElementById("start").value;
   const end = document.getElementById("end").value;
 
@@ -77,7 +80,9 @@ async function geocodeAddress(address) {
       if (status === 'OK' && results.length > 0) {
         const location = results[0].geometry.location
         resolve({ lat: location.lat() , lng: location.lng() });
-        alert(`${location.lat()},${location.lng()}`)
+        if (count == 1){
+          alert(`${location.lat()},${location.lng()}`)
+        }
       } else {
         reject(new Error('No se pudieron obtener las coordenadas para la dirección. Asegúrate de que la dirección sea válida.'));
       }
