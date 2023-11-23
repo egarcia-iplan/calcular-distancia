@@ -30,7 +30,6 @@ function initMap() {
 
 async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   count= count + 1;
-  console.log(count)
   const start = document.getElementById("start").value;
   const end = document.getElementById("end").value;
 
@@ -58,18 +57,16 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
               distanceOutput.innerHTML = `<span> La distancia entre el cliente y la CTO es de ${distanceValue} metros, no se puede instalar </span>`
             }
           
-            console.log(`La distancia es: ${distanceText}`);
-            console.log(`La distancia en valor numérico es: ${distanceValue} metros`);
           } else {
             console.error('La respuesta de la API de direcciones es inválida o no contiene rutas.');
           }
         })
-        .catch((e) => console.log("La solicitud de direcciones falló debido a " + e));
+        .catch((e) => console.warn("La solicitud de direcciones falló debido a " + e));
     } else {
-      console.log("No se pudieron obtener las coordenadas para las direcciones.");
+      console.warn("No se pudieron obtener las coordenadas para las direcciones.");
     }
   } catch (error) {
-    console.log("Error: " + error.message);
+    console.warn("Error: " + error.message);
   }
 }
 
