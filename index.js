@@ -51,7 +51,7 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
             const distanceText = response.routes[0].legs[0].distance.text;
             const distanceValue = response.routes[0].legs[0].distance.value;
             const distanceOutput = document.querySelector('#distance')
-            if (distanceValue < 250){
+            if (distanceValue <= 250){
               distanceOutput.innerHTML = `<span> La distancia entre el cliente y la CTO es de ${distanceValue} metros, se puede instalar </span>`
             } else {
               distanceOutput.innerHTML = `<span> La distancia entre el cliente y la CTO es de ${distanceValue} metros, no se puede instalar </span>`
