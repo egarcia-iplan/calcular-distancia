@@ -23,7 +23,9 @@ async function getDistance(apiKey, origin, destination) {
   async function main() {
     const apiKey ='AIzaSyDu7xVsO5y4PG2RmqkMJH-Y1kbugoDH5L0'
     const address1Value = address1.value
-    const address2Value = address1.value
+    console.log(address1Value)
+    const address2Value = address2.value
+    console.log(address2Value)
   
     const distance = await getDistance(apiKey, address1Value, address2Value);
   
