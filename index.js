@@ -75,7 +75,9 @@ async function geocodeAddress(address) {
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ address: address }, (results, status) => {
       if (status === 'OK' && results.length > 0) {
-        resolve({ lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng() });
+        const location = results[0].geometry.location
+        resolve({ lat: location.lat() , lng: location.lng() });
+        alert(`${location.lat()},${location.lng()}`)
       } else {
         reject(new Error('No se pudieron obtener las coordenadas para la dirección. Asegúrate de que la dirección sea válida.'));
       }
