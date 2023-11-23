@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Calculadora de Distancia</title>
+
+  <!-- Bootstrap CSS desde CDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container mt-4">
+  <h2>Calculadora de Distancia</h2>
+
+  <div class="form-group">
+    <label for="inputAddress1">Dirección 1:</label>
+    <input type="text" class="form-control" id="inputAddress1" placeholder="Ingrese la dirección 1">
+  </div>
+
+  <div class="form-group">
+    <label for="inputAddress2">Dirección 2:</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Ingrese la dirección 2">
+  </div>
+
+  <button type="button" class="btn btn-primary" onclick="main();">Calcular Distancia</button>
+
+  <div id="map" class="mt-4" style="height: 400px;">
+    
+ </div>
+
+  <p id="distanceText" class="mt-3">La distancia entre las direcciones es: <span id="distanceValue"></span></p>
+</div>
+
+<script>
+
+</script>
+
+<!-- Bootstrap JS y Popper.js desde CDN -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="scritp.js"></script>
+
+</body>
+</html>
